@@ -30,7 +30,7 @@ export const SliderSwatch = ({ hsl, offset, onClick = () => {}, active, first, l
 
   const handleClick = e => onClick({
     h: hsl.h,
-    s: 0.5,
+    s: 0.9,
     l: offset,
     source: 'hsl',
   }, e)
