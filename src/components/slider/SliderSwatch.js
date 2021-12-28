@@ -8,7 +8,7 @@ export const SliderSwatch = ({ hsl, offset, onClick = () => {}, active, first, l
     'default': {
       swatch: {
         height: '12px',
-        background: `hsl(${ hsl.h }, 70%, ${ (offset * 100) }%)`,
+        background: `hsl(${ hsl.h }, 90%, ${ (offset * 100) }%)`,
         cursor: 'pointer',
       },
     },
@@ -32,7 +32,7 @@ export const SliderSwatch = ({ hsl, offset, onClick = () => {}, active, first, l
 
   const handleClick = e => onClick({
     h: hsl.h,
-    s: 0.7,
+    s: 0.9,
     l: offset,
     source: 'hsl',
   }, e)
@@ -42,7 +42,9 @@ export const SliderSwatch = ({ hsl, offset, onClick = () => {}, active, first, l
   const getColorName = () => {
     const hexColor = tinycolor(hsl).toHex()
     const colorName = GetColorName(hexColor)
-    return colorName
+    const lightness = Math.round(hsl.l * 100).toString().concat('% Lightness')
+    const colorDetails = `Hue of ${ hsl.h } and saturation of 90%.`
+    return colorName.concat(' ', lightness, ' ', colorDetails)
   }
 
   return (
