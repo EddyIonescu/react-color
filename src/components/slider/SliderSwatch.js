@@ -1,12 +1,14 @@
 import React from 'react'
 import reactCSS from 'reactcss'
+import tinycolor from 'tinycolor2'
+import { GetColorName } from 'hex-color-to-color-name';
 
 export const SliderSwatch = ({ hsl, offset, onClick = () => {}, active, first, last }) => {
   const styles = reactCSS({
     'default': {
       swatch: {
         height: '12px',
-        background: `hsl(${ hsl.h }, 50%, ${ (offset * 100) }%)`,
+        background: `hsl(${ hsl.h }, 70%, ${ (offset * 100) }%)`,
         cursor: 'pointer',
       },
     },
@@ -30,15 +32,22 @@ export const SliderSwatch = ({ hsl, offset, onClick = () => {}, active, first, l
 
   const handleClick = e => onClick({
     h: hsl.h,
-    s: 0.5,
+    s: 0.7,
     l: offset,
     source: 'hsl',
   }, e)
 
   const handleKeyDown = e => e.key === 'Enter' && handleClick(e)
 
+  const getColorName = () => {
+    const hexColor = tinycolor(hsl).toHex()
+    const colorName = GetColorName(hexColor)
+    return colorName
+  }
+
   return (
     <div
+      aria-label={ `Change color to ${ getColorName() }` }
       tabIndex={ 0 }
       style={ styles.swatch }
       onClick={ e => handleClick(e) }
