@@ -77,7 +77,7 @@ export class Hue extends (PureComponent || Component) {
           onTouchMove={ this.handleChange }
           onTouchStart={ this.handleChange }
           onKeyDown={ this.handleChange }
-          aria-label={ this.props.hsl ? `Hue of ${ this.props.hsl.h }, use the left and right arrow keys to change` : '' }
+          aria-valuenow={ this.props.hsl ? `Hue of ${ Math.round(this.props.hsl.h) }, use the left and right arrow keys to change` : '' }
         >
           <style>{ `
             .hue-horizontal {

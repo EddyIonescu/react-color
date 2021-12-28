@@ -43,7 +43,7 @@ export const SliderSwatch = ({ hsl, offset, onClick = () => {}, active, first, l
     const hexColor = tinycolor(hsl).toHex()
     const colorName = GetColorName(hexColor)
     const lightness = Math.round(hsl.l * 100).toString().concat('% Lightness')
-    const colorDetails = `Hue of ${ hsl.h } and saturation of 90%.`
+    const colorDetails = `Hue of ${ Math.round(hsl.h) } and saturation of 90%.`
     return colorName.concat(' ', lightness, ' ', colorDetails)
   }
 
