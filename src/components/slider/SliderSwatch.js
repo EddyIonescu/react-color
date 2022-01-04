@@ -8,6 +8,7 @@ export const SliderSwatch = ({ hsl, offset, onClick = () => {}, active, first, l
     'default': {
       swatch: {
         height: '12px',
+        // Saturation hardcoded here and in SliderSwatches (as to make the swatch active).
         background: `hsl(${ hsl.h }, 80%, ${ (offset * 100) }%)`,
         cursor: 'pointer',
       },

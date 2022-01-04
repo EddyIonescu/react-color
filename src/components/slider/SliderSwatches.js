@@ -31,7 +31,7 @@ export const SliderSwatches = ({ onClick, hsl }) => {
           hsl={ hsl }
           offset=".80"
           active={ Math.abs(hsl.l - 0.80) < epsilon
-            && Math.abs(hsl.s - 0.50) < epsilon }
+            && Math.abs(hsl.s - 0.80) < epsilon }
           onClick={ onClick }
           first
         />
@@ -41,7 +41,7 @@ export const SliderSwatches = ({ onClick, hsl }) => {
           hsl={ hsl }
           offset=".65"
           active={ Math.abs(hsl.l - 0.65) < epsilon
-            && Math.abs(hsl.s - 0.50) < epsilon }
+            && Math.abs(hsl.s - 0.80) < epsilon }
           onClick={ onClick }
         />
       </div>
@@ -50,7 +50,7 @@ export const SliderSwatches = ({ onClick, hsl }) => {
           hsl={ hsl }
           offset=".50"
           active={ Math.abs(hsl.l - 0.50) < epsilon
-            && Math.abs(hsl.s - 0.50) < epsilon }
+            && Math.abs(hsl.s - 0.80) < epsilon }
           onClick={ onClick }
         />
       </div>
@@ -59,7 +59,7 @@ export const SliderSwatches = ({ onClick, hsl }) => {
           hsl={ hsl }
           offset=".35"
           active={ Math.abs(hsl.l - 0.35) < epsilon
-            && Math.abs(hsl.s - 0.50) < epsilon }
+            && Math.abs(hsl.s - 0.80) < epsilon }
           onClick={ onClick }
         />
       </div>
@@ -68,7 +68,7 @@ export const SliderSwatches = ({ onClick, hsl }) => {
           hsl={ hsl }
           offset=".20"
           active={ Math.abs(hsl.l - 0.20) < epsilon
-            && Math.abs(hsl.s - 0.50) < epsilon }
+            && Math.abs(hsl.s - 0.80) < epsilon }
           onClick={ onClick }
           last
         />
